@@ -1,0 +1,9 @@
+version: '0.1'
+
+services:
+  web:
+    container_name: clientnode
+    image: clientnode
+    build: .
+    ports:
+      - "3020:3020"
