@@ -14,7 +14,7 @@ module.exports = Arena({
         /**
          * Define your room handlers:
          */
-        gameServer.define('my_room', MyRoom);
+        gameServer.define('my_room', MyRoom).enableRealtimeListing();
     },
 
     initializeExpress: (app) => {

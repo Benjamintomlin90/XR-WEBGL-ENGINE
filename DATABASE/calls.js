@@ -6,10 +6,16 @@ var Schema = mongoose.Schema;
 //form for each recommended home according to data displayed on widget
 //_________________________________________________
 let userSchema = new Schema({
-  index: Number,
-  name: String,
-  loggedIn: Boolean,
-  team: String
+  "_id" : Number, 
+  "name" : {
+    "firstName": String, // required
+    "middleName": String, // optional
+    "lastName": String // required
+  },
+  "institution": String, // reference to Institution document
+  "classrooms": Array, // array of references to classroomConnections 
+  "teamName": String, //placeholder and artificial entry for server-side testing
+  "loggedIn": Boolean // initialize before room join for auth layer (more to come later)
 },
 
   { typeKey: '$type' } //needed so that for when generating from a mongoose schema, it does not try to convert an object at a property to a string.
